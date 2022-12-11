@@ -28,6 +28,7 @@ if(isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'
 
             foreach ($_POST as $key => $value) {
 
+                
                 if (isset($fields[$key])) {
                     $emailText .= nl2br("$fields[$key]: $value\n");
                 }
