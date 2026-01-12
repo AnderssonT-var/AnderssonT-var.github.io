@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Para Naomy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
+            font-family: "Georgia", serif;
+            color: #eaeaea;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 40px 25px;
+            line-height: 1.8;
+            opacity: 0;
+            text-align: center;
+            transition: opacity 2s ease;
+        }
+
+        h1 {
+            font-weight: normal;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* Snoopy */
+        .snoopy {
+            margin: 25px 0 10px;
+            opacity: 0;
+            animation: breathing 4s ease-in-out infinite;
+            transition: opacity 2s ease;
+        }
+
+        .snoopy img {
+            width: 120px;
+            filter: grayscale(100%);
+            opacity: 0.85;
+        }
+
+        .snoopy-text {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-bottom: 35px;
+        }
+
+        .letter {
+            white-space: pre-line;
+            font-size: 1.05rem;
+            text-align: left;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.5;
+        }
+
+        /* Pantalla inicial */
+        #overlay {
+            position: fixed;
+            inset: 0;
+            background: #0f0f0f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: #fff;
+            font-size: 1.4rem;
+            z-index: 9999;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #overlay small {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @keyframes breathing {
+            0%   { transform: scale(1); }
+            50%  { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Pantalla inicial -->
+<div id="overlay" onclick="iniciar()">
+    Para Naomy.<br>
+    <small>Toca la pantalla</small>
+</div>
+
+<!-- Música -->
+<audio id="music" loop>
+    <source src="say-yes-to-heaven.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container" id="contenido">
+
+    <h1>Naomy, soy yo…otra vez</h1>
+
+    <!-- Snoopy -->
+    <div class="snoopy" id="snoopy">
+        <img src="snoopy.jpeg" alt="Snoopy triste">
+    </div>
+    <div class="snoopy-text" id="snoopyText">
+        .....
+    </div>
+
+    <div class="letter">
+  
+
+Desde que ya no estás en mi vida, los días se sienten más largos, más fríos, más vacíos. Me levanto y por un segundo olvido que te perdí… pero luego llega el golpe, ese que no se ve, ese que duele más que cualquier otro. Porque no solo terminó lo nuestro, terminó la versión de mí que era feliz contigo.
+
+Lo que más me duele no es solo que te hayas ido, sino saber que nunca pude mostrarte todo el amor que estaba listo para darte. Lo guardé. Lo callé. Lo apagué por miedo, por orgullo, por escuchar voces que nunca supieron amar como tú lo hacías. Y hoy cargo con eso todos los días.
+
+Con mis actitudes te fui empujando lejos, sin darme cuenta, sin entender que cada silencio mío era una herida más para ti. Reaccioné cuando ya no estabas, cuando ya era demasiado tarde, cuando tu ausencia se volvió permanente.
+
+Fuiste la casualidad más bonito que me pasó en la vida, y perderte es algo que no voy a superar del todo. Siempre vas a vivir en mí, en un lugar al que nadie más va a poder entrar. Porque nadie más logró lo que tú hiciste: devolverme la vida cuando yo ya no creía en nada, enseñarme a sonreír otra vez, hacer que despertar cada mañana tuviera sentido solo por saber que existías.
+
+Fuiste ese sentimiento que no se puede explicar, que no cabe en palabras, que no se escribe sin que tiemble el alma. Fuiste mi “hogar” en una persona. Y ahora me toca aprender a vivir sin casa.
+
+Sé que vas a triunfar, porque tienes una luz que no se apaga, una esencia que no pasa desapercibida. Y aunque no sea a mi lado, deseo con todo mi corazón que seas feliz… incluso si eso significa que ya no forme parte de tu historia.
+
+Lo nuestro se quedó suspendido en el tiempo, como algo que pudo ser y no fue. Solo Dios sabrá si algún día nuestros caminos se vuelven a cruzar. Y si eso pasa, prometo no volver a cometer los errores que te perdieron. Pero si no… entonces esta es mi forma de dejarte ir, aunque me duela más de lo que puedo admitir.
+
+Quisiera que me des una última oportunidad; demostrarte que de verdad llegó tu momento de amar sin miedo sin preocupaciones, sin miedos, demostrarte ese amor sincero si existe, erre dejándome inundar de inseguridades, voces provenientes de personas que cargan con pesadez en sus corazones que no saben amar de verdad, inconscientemente pensé que no te iba a perder y al saber que ya lo hice toda esa felicidad que se formó de la nada se derrumbó.
+
+Siempre voy a estar aquí para ti, aunque tú ya no estés para mí.
+
+Adiós, mi niña bonita.
+
+
+
+
+(Espero entiendas que, romperse, mostrarse vulnerable y más no es por debilidad es por que de verdad se siente y pesa demasiado)
+
+
+
+<script>
+function iniciar() {
+    const overlay = document.getElementById("overlay");
+    const music = document.getElementById("music");
+    const contenido = document.getElementById("contenido");
+    const snoopy = document.getElementById("snoopy");
+
+    overlay.style.display = "none";
+
+    contenido.style.opacity = 1;
+    snoopy.style.opacity = 1;
+
+    music.volume = 0;
+    music.play();
+
+    let vol = 0;
+    const fade = setInterval(() => {
+        if (vol < 0.6) {
+            vol += 0.02;
+            music.volume = vol;
+        } else {
+            clearInterval(fade);
+        }
+    }, 200);
+}
+</script>
+
+</body>
+</html>
